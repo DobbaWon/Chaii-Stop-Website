@@ -2,10 +2,11 @@
 
 import styles from './Topbar.module.css';
 
-import { useState } from 'react';
+import { usePathname } from 'next/navigation';  
 
 export default function Topbar() {
-  const [currentPage, setCurrentPage] = useState('home');
+  const pathname = usePathname();
+  const isActive = (href: string): boolean => pathname === href;
   
   return (
     <div className={styles.topbar}>
@@ -18,12 +19,11 @@ export default function Topbar() {
       </a>
 
       <div className={styles.navLinks}>
-        <a href="/home" className={styles.link}>HOME</a>
-        <a href="/about" className={styles.link}>ABOUT</a>
-        <a href="/menu" className={styles.link}>MENU</a>
-        <a href="/contact-us" className={styles.link}>CONTACT US</a>
+        <a href="/home" className={isActive("/home") ? styles.active : styles.link}>HOME</a>
+        <a href="/about" className={isActive("/about") ? styles.active : styles.link}>ABOUT</a>
+        <a href="/menu" className={isActive("/menu") ? styles.active : styles.link}>MENU</a>
+        <a href="/contact-us" className={isActive("/contact-us") ? styles.active : styles.link}>CONTACT US</a>
       </div>
-
     </div>
   );
 }

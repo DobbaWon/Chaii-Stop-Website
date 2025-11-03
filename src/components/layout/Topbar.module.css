@@ -54,17 +54,32 @@
   font-weight: 600;
 }
 
-/* Individual link hover animation */
+.active {
+  color: #948a03
+}
+
+.active:hover {
+  animation: activeHover 0.7s forwards;
+}
+
+@keyframes activeHover {
+  from {
+    color: #948a03;
+  }
+  to {
+    color: #ffffff;
+  }
+}
+
 .link:hover {
   animation: linkHover 0.7s forwards;
 }
 
-/* Link hover keyframes */
 @keyframes linkHover {
   from {
     color: #ffffff;
   }
   to {
-    color: #e8da0e;
+    color: #948a03;
   }
 }
