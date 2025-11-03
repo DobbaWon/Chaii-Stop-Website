@@ -1,8 +1,17 @@
+import './home.module.css';
+import Banner from '@/src/components/sections/Home/Banner';
+import AboutUs from '@/src/components/sections/Home/AboutUs';
+import Reviews from '@/src/components/sections/Home/Reviews';
+import WhyChooseUs from '@/src/components/sections/Home/WhyChooseUs';
+
+
 export default function Home() {
   return (
     <div>
-      <h1>Welcome to Dobby’s Café</h1>
-      <p>Your cozy spot for artisan coffee and pastries.</p>
+      <Banner />
+      <AboutUs />
+      <Reviews />
+      <WhyChooseUs />
     </div>
   );
 }

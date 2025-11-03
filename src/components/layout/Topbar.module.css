@@ -1,0 +1,70 @@
+/* Topbar.module.css */
+
+/* Normal topbar styles */
+.topbar {
+  background-color: #121316;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* normal initially */
+  opacity: 1;
+  transition: opacity 0.5s ease, top 0.5s ease;
+  top: 0;
+  z-index: 100; /* above other elements */
+  width: 100%;
+}
+
+/* Sticky state */
+.sticky {
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  animation: fadeInTop 0.5s forwards;
+  width: 100%;
+}
+
+/* Fade-in animation */
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo */
+.logo {
+  height: 15vh;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+/* Nav links container */
+.navLinks {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 75px;
+  font-weight: 600;
+}
+
+/* Individual link hover animation */
+.link:hover {
+  animation: linkHover 0.7s forwards;
+}
+
+/* Link hover keyframes */
+@keyframes linkHover {
+  from {
+    color: #ffffff;
+  }
+  to {
+    color: #e8da0e;
+  }
+}

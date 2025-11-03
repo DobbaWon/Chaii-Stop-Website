@@ -1,23 +1,29 @@
+"use client";
+
+import styles from './Topbar.module.css';
+
+import { useState } from 'react';
+
 export default function Topbar() {
+  const [currentPage, setCurrentPage] = useState('home');
+  
   return (
-    <div className="bg-white shadow">
-      <div className="container mx-auto flex justify-between items-center py-4 px-4">
-        <h1 className="text-2xl font-bold text-gray-900">Dobby’s Café</h1>
-        <nav>
-          <ul className="flex space-x-6">
-            <li>
-              <a href="/" className="text-gray-700 hover:text-gray-900">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="/about" className="text-gray-700 hover:text-gray-900">
-                About
-              </a>
-            </li>
-          </ul>
-        </nav>
+    <div className={styles.topbar}>
+      <a href="/home">
+        <img
+          className={styles.logo}
+          src="/icons/chaii-stop-icon.jpg"
+          alt="Cafe Logo"
+        />
+      </a>
+
+      <div className={styles.navLinks}>
+        <a href="/home" className={styles.link}>HOME</a>
+        <a href="/about" className={styles.link}>ABOUT</a>
+        <a href="/menu" className={styles.link}>MENU</a>
+        <a href="/contact-us" className={styles.link}>CONTACT US</a>
       </div>
+
     </div>
   );
 }
