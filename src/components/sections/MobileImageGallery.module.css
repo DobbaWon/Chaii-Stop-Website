@@ -1,0 +1,68 @@
+.mobileGalleryContainer {
+  margin: 20px 0;
+}
+
+/* Clickable title */
+.toggleTitle {
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #f5c518;
+  margin-bottom: 10px;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+.toggleTitle:hover {
+  color: #ffc107;
+}
+
+/* Gallery hidden by default */
+.mobileGallery {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px 5vw;
+  background-color: #1a1a1a;
+}
+
+/* Show gallery when open */
+.mobileGallery.open {
+  display: flex;
+}
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.image {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.overlay h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.2rem;
+}
+
+.overlay p {
+  margin: 0;
+  font-size: 0.9rem;
+}

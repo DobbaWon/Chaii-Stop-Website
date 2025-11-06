@@ -74,6 +74,13 @@
   border-right: 2px solid #f5c518;
 }
 
+@media (max-width: 768px) {
+  .drinksColumnOne{
+    border: none !important;
+  }
+  
+}
+
 .drinksHeader {
   font-size: 1.5rem;
   margin-bottom: 20px;

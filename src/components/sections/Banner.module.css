@@ -5,15 +5,16 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  height: 100vh; /* full viewport height */
+  width: 100%;
+  min-height: 100vh; /* ensures full viewport height */
 }
 
 .banner img {
-  width: 100%; /* scale width to container */
-  height: auto; /* maintain aspect ratio */
-  object-fit: cover; /* fill container without distortion */
+  width: 100%;       /* scale to full width */
+  height: auto;      /* maintain aspect ratio */
+  max-height: 100vh; /* prevent overflow on tall screens */
+  object-fit: cover; /* fill container, crop if necessary */
   opacity: 0;
-  transition: opacity 2s ease;
 }
 
 .bannerImg {
@@ -25,13 +26,13 @@
   to { opacity: 1; }
 }
 
-/* Mobile adjustments */
+/* Optional: for extra mobile responsiveness */
 @media (max-width: 768px) {
   .banner {
-    height: 60vh; /* shorter banner for mobile */
+    min-height: auto; /* let height adjust based on image */
   }
 
   .banner img {
-    object-fit: cover;
+    max-height: 100vh;
   }
 }
