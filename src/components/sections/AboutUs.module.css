@@ -48,3 +48,25 @@
 .imageThree {
   margin-top: 60px;
 }
+
+@media (max-width: 768px) {
+  .imageGallery {
+    display: none; /* hide entire gallery on mobile */
+  }
+
+  .textSection {
+    margin-left: 0vw; /* optional: adjust text spacing */
+    padding: 30px;
+    margin-top: 10vh; /* optional: reduce top margin */
+    text-align: center; /* optional: center text on mobile */
+  }
+
+  .textSection h1 {
+    font-size: 1.8rem; /* smaller for mobile */
+  }
+
+  .textSection p {
+    font-size: 1rem;
+    margin-top: 3vh;
+  }
+}
