@@ -6,8 +6,8 @@ import Topbar from "../components/layout/Topbar";
 import Footer from "../components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Dobby’s Café",
-  description: "A cozy café serving artisan coffee and pastries.",
+  title: "Chaii Stop",
+  description: "We are a Palestine-supporting Cafe in Deepdale, Preston.",
 };
 
 export default function RootLayout({

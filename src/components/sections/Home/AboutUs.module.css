@@ -10,8 +10,9 @@
 
 .textSection{
   margin-top: 20vh;
-  width: 40%;
   text-align: left;
+  margin-left: 10vw;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .textSection h2 {
