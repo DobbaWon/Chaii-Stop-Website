@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Reviews.module.css";
 import ReviewCard from "../../components/ui/ReviewCard";
 import FadeInSection from "../../components/ui/FadeInSection";
@@ -16,14 +16,35 @@ export default function Reviews() {
   ];
 
   const [index, setIndex] = useState(0);
-  const visibleCount = 3;
+  const [visibleCount, setVisibleCount] = useState(3);
+
+  // Dynamically update visibleCount based on window width
+  useEffect(() => {
+    const updateVisibleCount = () => {
+      const width = window.innerWidth;
+      if (width >= 1200) setVisibleCount(3);  // Desktop
+      else if (width >= 768) setVisibleCount(2); // Tablet
+      else setVisibleCount(1); // Mobile
+    };
+
+    updateVisibleCount();
+    window.addEventListener("resize", updateVisibleCount);
+
+    return () => window.removeEventListener("resize", updateVisibleCount);
+  }, []);
 
   const next = () => {
     if (index + visibleCount < reviews.length) setIndex(index + 1);
   };
 
   const prev = () => {
-    if (index - 1 >= 0) setIndex(index - 1);
+    if (index > 0) setIndex(index - 1);
+  };
+
+  // Calculate track width and translateX dynamically
+  const trackStyle = {
+    transform: `translateX(-${(index / reviews.length) * 100}%)`,
+    width: `${(reviews.length / visibleCount) * 100}%`,
   };
 
   return (
@@ -36,13 +57,10 @@ export default function Reviews() {
         </button>
 
         <div className={styles.carousel}>
-          <div
-            className={styles.track}
-            style={{ transform: `translateX(-${(index / visibleCount) * 100}%)` }}
-          >
+          <div className={styles.track} style={trackStyle}>
             {reviews.map((r, i) => (
-              <FadeInSection>
-                <div key={i} className={styles.cardWrapper}>
+              <FadeInSection key={i}>
+                <div className={styles.cardWrapper} style={{ flex: `0 0 ${100 / visibleCount}%` }}>
                   <ReviewCard
                     name={r.name}
                     date={r.date}
@@ -58,7 +76,7 @@ export default function Reviews() {
         <button
           className={styles.arrow}
           onClick={next}
-          disabled={index + 0 >= reviews.length - visibleCount}
+          disabled={index + visibleCount >= reviews.length}
         >
           &#8594;
         </button>
