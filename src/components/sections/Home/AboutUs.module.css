@@ -1,7 +1,48 @@
 .aboutUs {
   min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-align: center;
+  background-image: url('/wallpapers/aboutUs.png');
+    background-size: cover;       /* makes it cover the whole element */
+  background-position: center;  /* centers the image */
+  background-repeat: no-repeat; /* prevents tiling */
+}
+
+.textSection{
+  margin-top: 20vh;
+  width: 40%;
+  text-align: left;
+}
+
+.textSection h2 {
+  font-size: 1.7rem;
+  color: #948a03;
+  font-weight: 500;
+}
+
+.textSection h1 { 
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.textSection p {
+  font-size: 1.2rem;
+  margin-top: 5vh;
+}
+
+.imageGallery{
+  display: flex;
+  flex-direction: row;
+  margin-top: 70px;
+}
+
+.imageOne, .imageTwo, .imageThree, .imageFour {
+  margin-bottom: 40px;
+  margin-left: 40px;
+  width: 300px;
+  height: 300px;
+}
+
+.imageThree {
+  margin-top: 60px;
 }
