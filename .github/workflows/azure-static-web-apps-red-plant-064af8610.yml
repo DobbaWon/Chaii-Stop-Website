@@ -50,7 +50,7 @@ jobs:
           action: "upload"
           app_location: "/"             # App source code path
           api_location: ""              # API source code path - optional
-          output_location: "build"      # Built app content directory
+          output_location: "out"      # Built app content directory
           github_id_token: ${{ steps.idtoken.outputs.result }}
           node_version: "20.9.0"        # Ensure correct Node.js version is used
 
