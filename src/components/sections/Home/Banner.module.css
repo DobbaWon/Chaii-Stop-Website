@@ -1,6 +1,24 @@
 .banner {
+  position: relative;
   background-color: #121212;
-  padding: 50px 20px;
-  text-align: center;
-  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.banner img {
+  height: 100vw;
+  object-fit: contain;
+  opacity: 0;
+}
+
+.bannerImg {
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
