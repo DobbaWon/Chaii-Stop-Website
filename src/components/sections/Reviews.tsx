@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import styles from "./Reviews.module.css";
-import ReviewCard from "../../../components/ui/ReviewCard";
-import FadeInSection from "../../../components/ui/FadeInSection";
+import ReviewCard from "../../components/ui/ReviewCard";
+import FadeInSection from "../../components/ui/FadeInSection";
 
 export default function Reviews() {
   const reviews = [
@@ -28,7 +28,7 @@ export default function Reviews() {
 
   return (
     <section className={styles.reviewsSection}>
-      <h2 className={styles.heading}>Customer Reviews</h2>
+      <h2 className={styles.title}>Customer Reviews</h2>
 
       <div className={styles.carouselContainer}>
         <button className={styles.arrow} onClick={prev} disabled={index === 0}>

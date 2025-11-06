@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col min-h-screen bg-neutral-50 text-gray-900">
         <ContactTopbar />
-        <Topbar />
+        {/* <Topbar /> */}
 
         <main className="flex-1">{children}</main>
 

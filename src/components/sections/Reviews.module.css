@@ -1,15 +1,21 @@
 .reviewsSection {
-  background-color: #121212;
+  background: #121212;
+
   color: #fff;
   padding: 60px 0;
   text-align: center;
   overflow: hidden;
 }
 
-.heading {
-  font-size: 2rem;
-  margin-bottom: 30px;
+.title {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #f5c518;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
 }
+
 .carouselContainer {
   position: relative;
   display: flex;

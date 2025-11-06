@@ -1,0 +1,42 @@
+.menuCard {
+  background-color: #1a1a1a;
+  color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  width: 350px;
+  height: 150px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.menuCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #f5c518;
+  margin: 0;
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #d3d3d3;
+}
+
+.description {
+  margin-top: 8px;
+  color: #b0b0b0;
+  font-size: 1rem;
+  line-height: 1.4;
+}

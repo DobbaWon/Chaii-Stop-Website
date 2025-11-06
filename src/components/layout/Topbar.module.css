@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  position: relative; /* static positioning */
   opacity: 1;
   width: 100%;
   z-index: 100;

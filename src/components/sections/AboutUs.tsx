@@ -1,6 +1,6 @@
 import styles from './AboutUs.module.css';
-import ImageFlipper from '../../ui/ImageFlipper';
-import FadeInSection from '../../ui/FadeInSection';
+import ImageFlipper from '../ui/ImageFlipper';
+import FadeInSection from '../ui/FadeInSection';
 
 export default function AboutUs() {
   return (
