@@ -37,19 +37,14 @@ export default function MenuSection() {
     ],
 
     Drinks: [
-      // Brewed to its finest
       { name: "Desi Chai", description: "Traditional Indian spiced tea with milk", price: "£1.90" },
       { name: "Desi Coffee", description: "Strong Indian coffee with a rich aroma", price: "£1.90" },
-
-      // Hot Drinks
       { name: "Kashmiri Chai", description: "Pink tea with a subtle nutty flavor and creaminess", price: "£2.20" },
       { name: "Chai Latte", description: "Smooth blend of tea and steamed milk with spices", price: "£2.00" },
       { name: "Caramel Chai", description: "Spiced tea with a hint of caramel sweetness", price: "£2.20" },
       { name: "Vanilla Coffee", description: "Rich coffee with vanilla flavor", price: "£2.20" },
       { name: "Hot Chocolate", description: "Creamy chocolate drink topped with froth", price: "£1.70" },
       { name: "English Tea", description: "Classic black tea served hot", price: "£1.70" },
-
-      // Cold Drinks
       { name: "Mango Lassi", description: "Refreshing yogurt-based mango smoothie", price: "£3.50" },
       { name: "Iced Desi Chai", description: "Chilled spiced tea, perfect for a hot day", price: "£3.00" },
       { name: "Iced Desi Coffee", description: "Cold, strong coffee with milk and a hint of sweetness", price: "£3.00" },
@@ -57,14 +52,11 @@ export default function MenuSection() {
       { name: "Appletiser", description: "Sparkling apple juice", price: "£2.00" },
       { name: "J20", description: "Fruit juice drink", price: "£2.00" },
       { name: "Water", description: "Still or sparkling", price: "£1.50" },
-
-      // Custom options
       { name: "Your Tea Your Way", description: "Caramel / Vanilla / Fresh Mint / Fresh Cream (Add 30p)", price: "Add 30p" },
       { name: "Go Large on Hot Drinks", description: "Increase size of hot drinks", price: "Add 70p" },
     ],
 
     Doughnuts: [
-      // Sugar Box
       {
         name: "Sugar Box - 1 Box (4 Doughnuts)",
         description: "Freshly made, sugar coated doughnuts",
@@ -80,8 +72,6 @@ export default function MenuSection() {
         description: "Freshly made, sugar coated doughnuts",
         price: "£12.00",
       },
-
-      // Luxury Box
       {
         name: "Luxury Box - 1 Box (4 Doughnuts)",
         description: "Freshly made with premium toppings",
@@ -98,7 +88,6 @@ export default function MenuSection() {
         price: "£15.00",
       },
     ],
-
 
     "Street Food": [
       { name: "Kebab Roll", description: "Spiced meat rolled in soft flatbread", price: "£3.50" },
@@ -133,7 +122,6 @@ export default function MenuSection() {
     ],
   };
 
-
   const [activeCategory, setActiveCategory] = useState<Category>("Breakfast");
   const categories = Object.keys(menuData) as Category[];
 
@@ -146,81 +134,57 @@ export default function MenuSection() {
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            className={`${styles.tabButton} ${
-              activeCategory === cat ? styles.activeTab : ""
-            }`}
+            className={`${styles.tabButton} ${activeCategory === cat ? styles.activeTab : ""}`}
           >
             {cat}
           </button>
         ))}
       </div>
 
-      <div
-        className={`${styles.menuList} ${
-          activeCategory === "Drinks" ? styles.drinksMenuList : ""
-        }`}
-      >
-        {activeCategory === "Drinks" ? (
-          <>
-            <div className={styles.drinksColumns}>
-              {/* Hot Drinks */}
-              <div className={styles.drinksColumn}>
-                <h3 className={styles.drinksHeader}>Hot Drinks</h3>
+      {activeCategory === "Drinks" ? (
+        <>
+          <div className={styles.drinksColumns}>
+            {/* Hot Drinks */}
+            <div className={styles.drinksColumnOne}>
+              <h3 className={styles.drinksHeader}>Hot Drinks</h3>
+              <div className={styles.menuList}>
                 {menuData.Drinks.filter((d) =>
                   ["Kashmiri Chai","Chai Latte","Caramel Chai","Vanilla Coffee","Hot Chocolate","English Tea"].includes(d.name)
                 ).map((item, idx) => (
-                  <MenuCard
-                    key={idx}
-                    name={item.name}
-                    description={item.description}
-                    price={item.price}
-                  />
+                  <MenuCard key={idx} name={item.name} description={item.description} price={item.price} />
                 ))}
               </div>
+            </div>
 
-              {/* Cold Drinks */}
-              <div className={styles.drinksColumn}>
-                <h3 className={styles.drinksHeader}>Cold Drinks</h3>
+            {/* Cold Drinks */}
+            <div className={styles.drinksColumnTwo}>
+              <h3 className={styles.drinksHeader}>Cold Drinks</h3>
+              <div className={styles.menuList}>
                 {menuData.Drinks.filter((d) =>
                   ["Mango Lassi","Iced Desi Chai","Iced Desi Coffee","Coke / Diet Coke","Appletiser","J20","Water"].includes(d.name)
                 ).map((item, idx) => (
-                  <MenuCard
-                    key={idx}
-                    name={item.name}
-                    description={item.description}
-                    price={item.price}
-                  />
+                  <MenuCard key={idx} name={item.name} description={item.description} price={item.price} />
                 ))}
               </div>
             </div>
+          </div>
 
-            {/* Custom Options / Deals */}
-            <div className={styles.drinksDeals}>
-              {menuData.Drinks.filter((d) =>
-                ["Your Tea Your Way", "Go Large on Hot Drinks"].includes(d.name)
-              ).map((item, idx) => (
-                <MenuCard
-                  key={idx}
-                  name={item.name}
-                  description={item.description}
-                  price={item.price}
-                />
-              ))}
-            </div>
-          </>
-        ) : (
-          // All other categories
-          menuData[activeCategory].map((item, idx) => (
-            <MenuCard
-              key={idx}
-              name={item.name}
-              description={item.description}
-              price={item.price}
-            />
-          ))
-        )}
-      </div>
-
+          {/* Custom Options / Deals */}
+          <div className={styles.drinksDeals}>
+            {menuData.Drinks.filter((d) =>
+              ["Your Tea Your Way", "Go Large on Hot Drinks"].includes(d.name)
+            ).map((item, idx) => (
+              <MenuCard key={idx} name={item.name} description={item.description} price={item.price} />
+            ))}
+          </div>
+        </>
+      ) : (
+        <div className={styles.menuList}>
+          {menuData[activeCategory].map((item, idx) => (
+            <MenuCard key={idx} name={item.name} description={item.description} price={item.price} />
+          ))}
+        </div>
+      )}
     </section>
   );
 }

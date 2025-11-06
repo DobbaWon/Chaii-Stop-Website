@@ -1,11 +1,11 @@
 .menuSection {
-  padding: 80px 10%;
-  background: linear-gradient(180deg, #121212 0%, #14171a 33%, #181c1f 66%, #1a1a1a 100%);
-
+  padding: 80px 5%;
+  background: #1a1a1a;
   color: #fff;
   text-align: center;
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
 .title {
@@ -51,28 +51,27 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
+/* ------------------- Menu List ------------------- */
 .menuList {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
   justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* dynamic, max 4 per row */
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.menuList > * {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
+/* ------------------- Drinks Columns ------------------- */
 .drinksColumns {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   margin-bottom: 40px;
 }
 
-.drinksColumn {
-  flex: 1 1 300px;
-  max-width: 400px;
+.drinksColumnOne{
+  padding-right: 20px;
+  border-right: 2px solid #f5c518;
 }
 
 .drinksHeader {
@@ -83,19 +82,19 @@
   text-align: center;
 }
 
+/* ------------------- Drinks Deals ------------------- */
 .drinksDeals {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 20px;
-  max-width: 800px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: 100%;
+  margin: 0 auto 40px auto;
 }
 
-.drinksMenuList {
-  display: block;
-  justify-items: unset;
-}
-
+/* ------------------- Menu Card Effects ------------------- */
+.menuList > *,
 .drinksDeals > * {
   width: 100%;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

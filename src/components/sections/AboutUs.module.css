@@ -2,8 +2,7 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  background: linear-gradient(180deg, #121212 0%, #151515 33%, #191919 66%, #1a1a1a 100%);
-
+  background-color: #1a1a1a;
 }
 
 .textSection{
@@ -14,7 +13,7 @@
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 2.3rem;
   margin-bottom: 40px;
   color: #f5c518;
   text-transform: uppercase;
