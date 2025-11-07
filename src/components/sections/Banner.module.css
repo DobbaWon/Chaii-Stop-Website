@@ -17,7 +17,7 @@
   opacity: 0;
 }
 
-.bannerImg {
+.bannerImg, .mobileBannerImg {
   animation: fadeIn 2s ease forwards;
 }
 
@@ -28,11 +28,16 @@
 
 /* Optional: for extra mobile responsiveness */
 @media (max-width: 768px) {
-  .banner {
-    min-height: auto; /* let height adjust based on image */
+  .bannerImg {
+    display: none;
   }
-
   .banner img {
-    max-height: 100vh;
+    height: 90vh;
+  }
+}
+
+@media (min-width: 768px){
+  .mobileBannerImg {
+    display: none;
   }
 }
